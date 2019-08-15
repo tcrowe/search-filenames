@@ -82,7 +82,7 @@ The development tasks run under `npm run dev`
 
 ## Copying, license, and contributing
 
-Copyright (C) Tony Crowe <github@tonycrowe.com> (https://tcrowe.github.io) 2018
+Copyright (C) Tony Crowe <github@tonycrowe.com> (https://tcrowe.github.io) 2019
 
 Thank you for using and contributing to make search-filenames better.
 
