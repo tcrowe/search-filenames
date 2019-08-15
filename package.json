@@ -39,9 +39,9 @@
     "dev-eslint": "nodemon -q -w src -w test --exec 'eslint --cache --fix --format unix src test'",
     "dev-mocha": "nodemon -q -w src -w test --exec 'mocha'",
     "dev-app": "nodemon -q -w src src/index.js",
-    "dev": "run-s compile-schema && run-p dev-*",
+    "dev": "run-s compile-schema && run-p 'dev-*'",
     "test": "mocha",
     "prd-eslint": "eslint --format unix src test",
-    "prd": "run-s clean prd-* test"
+    "prd": "run-s 'prd-*' test"
   }
 }
