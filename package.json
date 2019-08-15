@@ -1,0 +1,47 @@
+{
+  "name": "search-filenames",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Tony Crowe <npm@tonycrowe.com> (https://github.com/tcrowe)",
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/tcrowe/search-filenames#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tcrowe/search-filenames.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/tcrowe/search-filenames/issues"
+  },
+  "main": "src/index.js",
+  "bin": {
+    "search-filenames": "src/cli.js"
+  },
+  "dependencies": {
+    "async": "^3.1.0",
+    "getopts": "^2.2.5",
+    "lodash": "^4.17.15",
+    "micromatch": "^4.0.2"
+  },
+  "devDependencies": {
+    "ajv-cli": "^3.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "should": "^13.2.3"
+  },
+  "scripts": {
+    "compile-schema": "ajv compile -s src/opts-schema.json -o src/opts-validator.js --all-errors --unicode=true --format=fast --use-defaults --coerce-types",
+    "dev-eslint": "nodemon -q -w src -w test --exec 'eslint --cache --fix --format unix src test'",
+    "dev-mocha": "nodemon -q -w src -w test --exec 'mocha'",
+    "dev-app": "nodemon -q -w src src/index.js",
+    "dev": "run-s compile-schema && run-p dev-*",
+    "test": "mocha",
+    "prd-eslint": "eslint --format unix src test",
+    "prd": "run-s clean prd-* test"
+  }
+}

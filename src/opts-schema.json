@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "required": ["rootPath"],
+  "properties": {
+    "concurrency": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 64,
+      "default": 8,
+      "description": "How many IO operations can be done simultaenously"
+    },
+    "rootPath": { "type": "string" },
+    "include": { "type": "array", "items": { "type": "string" } },
+    "includeGlobs": { "type": "array", "items": { "type": "string" } },
+    "includeRegExp": { "type": "array", "items": { "type": "string" } },
+    "exclude": { "type": "array", "items": { "type": "string" } },
+    "excludeGlobs": { "type": "array", "items": { "type": "string" } },
+    "excludeRegExp": { "type": "array", "items": { "type": "string" } },
+    "followSymlinks": { "type": "boolean", "default": false },
+    "statTypes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "block-device",
+          "character-device",
+          "directory",
+          "fifo",
+          "file",
+          "symlink",
+          "socket"
+        ]
+      }
+    }
+  }
+}
